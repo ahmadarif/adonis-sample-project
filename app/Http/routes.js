@@ -53,6 +53,6 @@ Route.group('api', function () {
   Route.get('/relation/:id', 'UserController.relation')
 
   Route.post('login', 'UserController.login')
-  Route.get('profile', 'UserController.profile')
+  Route.get('profile', 'UserController.profile').middleware('auth:api')
   Route.get('sendMail', 'UserController.sendMail')
 }).prefix('/api').middleware('throttle:5')

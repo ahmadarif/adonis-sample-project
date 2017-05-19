@@ -97,10 +97,7 @@ class UserController {
   }
 
   * profile (request, response) {
-    // AUTHENTICATOR
-    const authenticator = request.auth.authenticator('api')
-
-    const user = yield authenticator.getUser()
+    const user = request.currentUser || request.authUser
     if (user) {
       response.ok(user)
       return
