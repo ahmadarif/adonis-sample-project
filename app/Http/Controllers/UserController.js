@@ -83,17 +83,25 @@ class UserController {
     const password = request.input('password')
 
     // API TOKEN AUTH
-    const tokenAuthenticator = request.auth.authenticator('api')
+    const authenticator = request.auth.authenticator('api')
     const user = yield User.findBy('email', email)
     if (user) {
       const isSame = yield Hash.verify(password, user.password)
       if (isSame) {
-        const token = yield tokenAuthenticator.generate(user)
+        const token = yield authenticator.generate(user)
         response.json(token)
         return
       }
     }
     response.status(401).json({ json: 'Invalid credentails' })
+  }
+
+  * logout(request, response) {
+    const authenticator = request.auth.authenticator('api')
+    const user = request.currentUser || request.authUser
+    const token = request.header('Authorization').replace('Bearer ', '')
+    yield authenticator.revokeExcept(user, [token])
+    response.json({ message: 'Logout successfully' })
   }
 
   * profile (request, response) {
