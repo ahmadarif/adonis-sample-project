@@ -1,0 +1,14 @@
+{% extends 'master' %}
+
+{% block content %}
+  <script src="https://unpkg.com/adonis-websocket-client@1.0.2/dist/ws.js"></script>
+  <script>
+    //    const io = ws('')
+    const io = ws('http://localhost:3333').channel('chat')
+    const client = io.withApiKey('67f837303b8c11e7a63bed42b870fd9b').connect(function (error, connected) { console.log(error, connected) })
+    client.on('message', function (message) {
+      console.log(message)
+    })
+    client.emit('message', 'Helloooooww')
+  </script>
+{% endblock %}
