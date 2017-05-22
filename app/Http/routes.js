@@ -56,4 +56,7 @@ Route.group('api', function () {
   Route.delete('logout', 'UserController.logout').middleware('auth:api')
   Route.get('profile', 'UserController.profile').middleware('auth:api')
   Route.get('sendMail', 'UserController.sendMail')
-}).prefix('/api').middleware('throttle:5')
+
+  Route.get('/redis', 'RedisController.index')
+  Route.post('/redis', 'RedisController.post')
+}).prefix('/api').middleware('throttle:60')

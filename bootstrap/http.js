@@ -55,6 +55,7 @@ module.exports = function (callback) {
       |
       */
       require('./events')
+      require('./redis')
 
       /*
       |--------------------------------------------------------------------------

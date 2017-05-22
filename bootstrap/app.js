@@ -33,7 +33,9 @@ const providers = [
   'adonis-mail-provider/providers/MailProvider',
   'adonis-validation-provider/providers/ValidatorProvider',
   'adonis-throttle/providers/ThrottleProvider',
-  'adonis-kue/providers/KueProvider'
+  'adonis-kue/providers/KueProvider',
+  'adonis-redis/providers/RedisFactoryProvider',
+  'adonis-redis/providers/RedisProvider'
 ]
 
 /*
@@ -85,7 +87,8 @@ const aliases = {
   Mail: 'Adonis/Addons/Mail',
   Validator: 'Adonis/Addons/Validator',
   Throttle: 'Adonis/Addons/Throttle',
-  Kue: 'Adonis/Addons/Kue'
+  Kue: 'Adonis/Addons/Kue',
+  Redis: 'Adonis/Addons/Redis'
 }
 
 /*
