@@ -26,6 +26,11 @@ class ApiController {
     })
   }
 
+  * header (request, response) {
+    console.log(request.header("Hitut"))
+    response.status(400).json({message: "HUHUY"})
+  }
+
 }
 
 module.exports = ApiController

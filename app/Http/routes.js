@@ -39,6 +39,7 @@ Route.group('api', function () {
   })
 
   Route.get('/test', 'ApiController.test')
+  Route.post('/header', 'ApiController.header')
   Route.post('/upload', 'ApiController.updateAvatar')
 
   Route.get('/users', 'UserController.get')
