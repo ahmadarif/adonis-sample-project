@@ -19,12 +19,12 @@
     "adonis-commands": "^2.1.5",
     "adonis-fold": "^3.0.3",
     "adonis-framework": "^3.0.10",
-    "adonis-kue": "^3.1.1",
+    "adonis-kue": "^4.0.0",
     "adonis-lucid": "^3.0.14",
     "adonis-mail-provider": "^2.0.2",
     "adonis-middleware": "^1.0.11",
     "adonis-redis": "^1.0.1",
-    "adonis-throttle": "^1.0.5",
+    "adonis-throttle": "^2.0.1",
     "adonis-validation-provider": "^3.0.5",
     "adonis-websocket": "^1.0.3",
     "geoip-lite": "^1.2.1",
@@ -42,6 +42,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "standard": "^10.0.1"
+    "standard": "^11.0.1"
   }
 }
